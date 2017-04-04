@@ -3,8 +3,9 @@ class profile::nginx (
 ) {
   include ::nginx
   $vhosts.each |$vhost| {
-    ::nginx::vhost { $vhost['fqdn']:
+    ::nginx::resource::server { $vhost['fqdn']:
     port => $vhost['port'],
     server_aliases => $vhost['server_aliases'],
+    www_root => $vhost['www_root'],
   }
 }
