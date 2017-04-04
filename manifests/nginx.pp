@@ -1,4 +1,4 @@
-class profile::nginx (
+class profiles::nginx (
   Array $vhosts,
 ) {
   include ::nginx
